@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task List with Array and Loop</title>
+</head>
+<body>
+
+  <script>
+    
+    var tasks = [
+      { id: 1, name: "Review project curriculum", completed: true },
+      { id: 2, name: "Send client follow-up email", completed: true },
+      { id: 3, name: "Update weekly planner", completed: false },
+      { id: 4, name: "Practice coding (1 hour)", completed: false },
+      { id: 5, name: "Prepare robotics lesson", completed: false }
+    ];
+
+    
+    for (var i = 0; i < tasks.length; i++) {
+      var task = tasks[i];
+      var status = task.completed ? "✅ Completed" : "⏳ Pending";
+      alert("Task: " + task.name + "\nStatus: " + status);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077b6;
+    }
+
+    input {
+      width: 70%;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background-color: #e0f7fa;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .count {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>My To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+    <div class="count" id="taskCount">Total Tasks: 0</div>
+  </div>
+
+  <script>
+    var tasks = [];
+
+    function addTask() {
+      var input = document.getElementById("taskInput");
+      var taskName = input.value.trim();
+
+      if (taskName === "") {
+        alert("Please enter a task.");
+        return;
+      }
+
+      var task = {
+        id: Date.now(),
+        name: taskName
+      };
+
+      tasks.push(task);
+      input.value = "";
+      renderTasks();
+    }
+
+    function deleteTask(id) {
+      tasks = tasks.filter(function(task) {
+        return task.id !== id;
+      });
+      renderTasks();
+    }
+
+    function renderTasks() {
+      var list = document.getElementById("taskList");
+      list.innerHTML = "";
+
+      tasks.forEach(function(task) {
+        var li = document.createElement("li");
+        li.textContent = task.name;
+
+        var delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.style.backgroundColor = "#ff4d4d";
+        delBtn.style.color = "white";
+        delBtn.style.border = "none";
+        delBtn.style.padding = "5px 10px";
+        delBtn.style.cursor = "pointer";
+        delBtn.onclick = function() {
+          deleteTask(task.id);
+        };
+
+        li.appendChild(delBtn);
+        list.appendChild(li);
+      });
+
+      document.getElementById("taskCount").textContent = "Total Tasks: " + tasks.length;
+    }
+  </script>
+
+</body>
+</html>

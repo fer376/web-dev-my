@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Status Message</title>
+</head>
+<body>
+
+  <script>
+
+    var task = {
+      id: 1,
+      name: "Prepare robotics lesson",
+      completed: false
+    };
+
+    if (task.completed) {
+      alert("✅ Task '" + task.name + "' is completed. Great job!");
+    } else {
+      alert("⏳ Task '" + task.name + "' is still pending. Keep going!");
+    }
+  </script>
+
+</body>
+</html>

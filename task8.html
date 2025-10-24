@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+</head>
+<body>
+
+  <script>
+    
+    var tasks = [];
+
+    function addTask(name, completed) {
+      var task = {
+        id: tasks.length + 1,
+        name: name,
+        completed: completed
+      };
+      tasks.push(task);
+    }
+
+    function showTasks() {
+      for (var i = 0; i < tasks.length; i++) {
+        var task = tasks[i];
+        var status = task.completed ? "✅ Completed" : "⏳ Pending";
+        alert("Task " + task.id + ": " + task.name + "\nStatus: " + status);
+      }
+    }
+
+    addTask("Review project curriculum", true);
+    addTask("Prepare robotics lesson", false);
+    addTask("Practice coding", false);
+
+    showTasks();
+  </script>
+
+</body>
+</html>

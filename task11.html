@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Task</title>
+</head>
+<body>
+
+  <h2>Task Manager</h2>
+
+ 
+  <input type="text" id="taskInput" placeholder="Enter task name">
+  <button onclick="addTask()">Add Task</button>
+
+  <script>
+  
+    var tasks = [];
+
+   
+    function addTask() {
+      var taskName = document.getElementById("taskInput").value;
+
+      if (taskName.trim() === "") {
+        alert("Please enter a task name.");
+        return;
+      }
+
+      var task = {
+        id: tasks.length + 1,
+        name: taskName,
+        completed: false
+      };
+
+      tasks.push(task);
+
+      alert("✅ Task '" + task.name + "' added successfully!");
+      document.getElementById("taskInput").value = ""; 
+    }
+  </script>
+
+</body>
+</html>
