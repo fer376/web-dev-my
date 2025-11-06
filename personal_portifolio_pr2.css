@@ -1,0 +1,97 @@
+body{
+    background-color: cornsilk;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+.name h1{
+    font-size: 40px;
+    margin: 0;
+    background-color:;
+}
+.profile-pic img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 5px ;
+}
+.header{
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+}
+.line{
+    margin: 20px 0;
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    background-color: silver;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+}
+.skills{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: silver;
+    padding: 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+
+}
+.interests{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background-color: silver;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+
+}
+.contact{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    align-items: center;
+    text-align: center;
+    background-color: silver;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color:rgb(207, 212, 153);
+    border-radius: 100px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    padding: 5px;
+}   
